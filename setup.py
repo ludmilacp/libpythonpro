@@ -30,7 +30,8 @@ def find_package_data(
     exclude=standard_exclude,
     exclude_directories=standard_exclude_directories,
     only_in_packages=True,
-    show_ignored=False):
+    show_ignored=False
+):
     """
     Return a dictionary suitable for use in ``package_data``
     in a distutils ``setup.py`` file.
@@ -59,18 +60,14 @@ def find_package_data(
             if os.path.isdir(fn):
                 bad_name = False
                 for pattern in exclude_directories:
-                    if (fnmatchcase(name, pattern)
-                        or fn.lower() == pattern.lower()):
+                    if (fnmatchcase(name, pattern) or fn.lower() == pattern.lower()):
                         bad_name = True
                         if show_ignored:
-                            print >> sys.stderr, (
-                                "Directory %s ignored by pattern %s"
-                                % (fn, pattern))
+                            print("Directory %s ignored by pattern %s" % (fn, pattern), file=sys.stderr)
                         break
                 if bad_name:
                     continue
-                if (os.path.isfile(os.path.join(fn, "__init__.py"))
-                    and not prefix):
+                if (os.path.isfile(os.path.join(fn, "__init__.py")) and not prefix):
                     if not package:
                         new_package = name
                     else:
@@ -82,13 +79,10 @@ def find_package_data(
                 # is a file
                 bad_name = False
                 for pattern in exclude:
-                    if (fnmatchcase(name, pattern)
-                        or fn.lower() == pattern.lower()):
+                    if (fnmatchcase(name, pattern) or fn.lower() == pattern.lower()):
                         bad_name = True
                         if show_ignored:
-                            print >> sys.stderr, (
-                                "File %s ignored by pattern %s"
-                                % (fn, pattern))
+                            print("File %s ignored by pattern %s" % (fn, pattern), file=sys.stderr)
                         break
                 if bad_name:
                     continue
@@ -97,7 +91,6 @@ def find_package_data(
 
 
 PACKAGE = "libpythonpro"
-#NAME = PACKAGE
 NAME = 'lcp.libpythonpro'
 DESCRIPTION = "Módulo para exemplificar construção de projetos Python no curso Pytools"
 AUTHOR = "Ludmila Canfield Pereira"
