@@ -8,13 +8,8 @@ from libpythonpro.spam.modelos import Usuario
 @pytest.mark.parametrize(
     'usuarios',
     [
-        [
-        Usuario(nome='Renzo', email='renzo@python.pro.br'),
-        Usuario(nome='Luciano', email='renzo@python.pro.br')
-        ],
-        [
-            Usuario(nome='Renzo', email='renzo@python.pro.br')
-        ]
+        [Usuario(nome='Renzo', email='renzo@python.pro.br'), Usuario(nome='Luciano', email='renzo@python.pro.br')],
+        [Usuario(nome='Renzo', email='renzo@python.pro.br')]
     ]
 )
 def test_qde_de_spam(sessao, usuarios):
@@ -24,4 +19,3 @@ def test_qde_de_spam(sessao, usuarios):
     enviador_de_spam = EnviadorDeSpam(sessao, enviador)
     enviador_de_spam.enviar_emails('renzo@python.pro.br', 'curso Python Pro', 'Confira os módulos fantasticos')
     assert len(usuarios) == enviador.qtd_email_enviados
-
