@@ -18,7 +18,7 @@ def avatar_url(mocker):
 
 def test_buscar_avatar(avatar_url):
     url = github_api.buscar_avatar('ludmilacp')
-    assert 'https://avatars2.githubusercontent.com/u/60018104?v=4' == url
+    assert avatar_url == url
 
 
 def test_buscar_avatar_integracao():
