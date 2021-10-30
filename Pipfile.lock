@@ -180,10 +180,10 @@
         },
         "pyparsing": {
             "hashes": [
-                "sha256:4c830582a84fb022400b85429791bc551f1f4871c33f23e44f353119e92f969f",
-                "sha256:c342dccb5250c08d45fd6f8b4a559613ca603b57498511740e65cd11a2e7dcec"
+                "sha256:c0a7dfcd26825bd4453574c4e7ad04aa095975ce54d04f738fe3a8350fbd223a",
+                "sha256:e0df773d7fa2240322daae7805626dfc5f2d5effb34e1a7be2702c99cfb9f6b1"
             ],
-            "version": "==2.4.6"
+            "version": "==3.0.4"
         },
         "pytest": {
             "hashes": [
